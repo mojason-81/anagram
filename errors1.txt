@@ -1,10 +1,111 @@
-Starting process with command `bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
-2015-07-18T18:35:26.468531+00:00 app[web.1]: Puma starting in single mode...
-2015-07-18T18:35:26.468573+00:00 app[web.1]: * Min threads: 5, max threads: 5
-2015-07-18T18:35:26.468569+00:00 app[web.1]: * Version 2.12.2 (ruby 2.2.0-p0), codename: Plutonian Photo Shoot
-2015-07-18T18:35:26.468575+00:00 app[web.1]: * Environment: production
-2015-07-18T18:35:28.067797+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `instance_eval'
-2015-07-18T18:35:28.067788+00:00 app[web.1]: config.ru:7:in `block in <module:PumaRackCompat>': undefined method `set' for #<Puma::Rack::Builder:0x007fb700660f30> (NoMethodError)
-2015-07-18T18:35:28.067800+00:00 app[web.1]: 	from config.ru:in `new'
-2015-07-18T18:35:28.067799+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `initialize'
-2015-07-18T18:35:28.067736+00:00 app[web.1]: ! Unable to load application: NoMethodError: undefined method `set' for #<Puma::Rack::Builder:0x007fb700660f30>
+jason@thinkpad:anagram$ git push heroku master
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> Removing .DS_Store files
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rack
+remote: -----> Using Ruby version: ruby-2.2.0
+remote: -----> Installing dependencies using 1.9.7
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Fetching gem metadata from https://rubygems.org/.........
+remote:        Fetching version metadata from https://rubygems.org/..
+remote:        Using rake 10.4.2
+remote:        Installing minitest 5.7.0
+remote:        Installing thread_safe 0.3.5
+remote:        Installing i18n 0.7.0
+remote:        Installing builder 3.2.2
+remote:        Installing arel 6.0.2
+remote:        Installing diff-lcs 1.2.5
+remote:        Installing logger 1.2.8
+remote:        Installing json 1.8.3
+remote:        Installing rack 1.6.4
+remote:        Installing rspec-support 3.3.0
+remote:        Installing tilt 2.0.1
+remote:        Using bundler 1.9.7
+remote:        Installing tzinfo 1.2.2
+remote:        Installing rack-protection 1.5.3
+remote:        Installing puma 2.12.2
+remote:        Installing rack-test 0.6.3
+remote:        Installing rspec-core 3.3.2
+remote:        Installing rspec-expectations 3.3.1
+remote:        Installing rspec-mocks 3.3.2
+remote:        Installing activesupport 4.2.3
+remote:        Installing sinatra 1.4.6
+remote:        Installing rspec 3.3.0
+remote:        Installing activemodel 4.2.3
+remote:        Installing activerecord 4.2.3
+remote:        Installing sinatra-activerecord 2.0.6
+remote:        Installing pg 0.18.2
+remote:        Bundle complete! 10 Gemfile dependencies, 27 gems now installed.
+remote:        Gems in the groups development and test were not installed.
+remote:        Bundled gems are installed into ./vendor/bundle.
+remote:        Bundle completed (38.40s)
+remote:        Cleaning up the bundler cache.
+remote: -----> Writing config/database.yml to read from DATABASE_URL
+remote: 
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote:        Default types for Ruby  -> console, rake
+remote: 
+remote: -----> Compressing... done, 35.5MB
+remote: -----> Launching... done, v5
+remote:        https://jason-anagram.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy.... done.
+To https://git.heroku.com/jason-anagram.git
+ * [new branch]      master -> master
+jason@thinkpad:anagram$ heroku logs -n 50
+2015-07-18T20:04:24.567563+00:00 heroku[api]: Enable Logplex by jason@mojason.com
+2015-07-18T20:04:24.567563+00:00 heroku[api]: Release v2 created by jason@mojason.com
+2015-07-18T20:06:08.568198+00:00 heroku[api]: Set LANG, RACK_ENV config vars by jason@mojason.com
+2015-07-18T20:06:08.568198+00:00 heroku[api]: Release v3 created by jason@mojason.com
+2015-07-18T20:06:09.013082+00:00 heroku[api]: Attach DATABASE resource by jason@mojason.com
+2015-07-18T20:06:09.013082+00:00 heroku[api]: Release v4 created by jason@mojason.com
+2015-07-18T20:06:09.301519+00:00 heroku[api]: Scale to web=1 by jason@mojason.com
+2015-07-18T20:06:09.365663+00:00 heroku[api]: Deploy 6e702d6 by jason@mojason.com
+2015-07-18T20:06:09.365663+00:00 heroku[api]: Release v5 created by jason@mojason.com
+2015-07-18T20:06:09.427288+00:00 heroku[slug-compiler]: Slug compilation started
+2015-07-18T20:06:09.427307+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-07-18T20:06:15.488712+00:00 heroku[web.1]: Starting process with command `bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+jason@thinkpad:anagram$ heroku logs -n 500
+2015-07-18T20:04:24.567563+00:00 heroku[api]: Enable Logplex by jason@mojason.com
+2015-07-18T20:04:24.567563+00:00 heroku[api]: Release v2 created by jason@mojason.com
+2015-07-18T20:06:08.568198+00:00 heroku[api]: Set LANG, RACK_ENV config vars by jason@mojason.com
+2015-07-18T20:06:08.568198+00:00 heroku[api]: Release v3 created by jason@mojason.com
+2015-07-18T20:06:09.013082+00:00 heroku[api]: Attach DATABASE resource by jason@mojason.com
+2015-07-18T20:06:09.013082+00:00 heroku[api]: Release v4 created by jason@mojason.com
+2015-07-18T20:06:09.301519+00:00 heroku[api]: Scale to web=1 by jason@mojason.com
+2015-07-18T20:06:09.365663+00:00 heroku[api]: Deploy 6e702d6 by jason@mojason.com
+2015-07-18T20:06:09.365663+00:00 heroku[api]: Release v5 created by jason@mojason.com
+2015-07-18T20:06:09.427288+00:00 heroku[slug-compiler]: Slug compilation started
+2015-07-18T20:06:09.427307+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-07-18T20:06:15.488712+00:00 heroku[web.1]: Starting process with command `bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+2015-07-18T20:06:24.950544+00:00 app[web.1]: Puma starting in single mode...
+2015-07-18T20:06:24.950612+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2015-07-18T20:06:24.950609+00:00 app[web.1]: * Version 2.12.2 (ruby 2.2.0-p0), codename: Plutonian Photo Shoot
+2015-07-18T20:06:24.950613+00:00 app[web.1]: * Environment: production
+2015-07-18T20:06:29.418644+00:00 app[web.1]: ! Unable to load application: NoMethodError: undefined method `set' for #<Puma::Rack::Builder:0x007f8697a8a050>
+2015-07-18T20:06:29.418938+00:00 app[web.1]: config.ru:7:in `block in <module:PumaRackCompat>': undefined method `set' for #<Puma::Rack::Builder:0x007f8697a8a050> (NoMethodError)
+2015-07-18T20:06:29.418970+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `instance_eval'
+2015-07-18T20:06:29.420074+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `initialize'
+2015-07-18T20:06:29.420124+00:00 app[web.1]: 	from config.ru:in `new'
+2015-07-18T20:06:29.420153+00:00 app[web.1]: 	from config.ru:in `<module:PumaRackCompat>'
+2015-07-18T20:06:29.420398+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `eval'
+2015-07-18T20:06:29.420420+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `new_from_string'
+2015-07-18T20:06:29.420441+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:174:in `parse_file'
+2015-07-18T20:06:29.420497+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:104:in `load_rackup'
+2015-07-18T20:06:29.420518+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:71:in `app'
+2015-07-18T20:06:29.420620+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/runner.rb:113:in `load_and_bind'
+2015-07-18T20:06:29.420643+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/single.rb:79:in `run'
+2015-07-18T20:06:29.420663+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/cli.rb:215:in `run'
+2015-07-18T20:06:29.420683+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/bin/puma:10:in `<top (required)>'
+2015-07-18T20:06:29.420717+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `load'
+2015-07-18T20:06:29.420740+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `<main>'
+2015-07-18T20:06:30.406635+00:00 heroku[web.1]: Process exited with status 1
+2015-07-18T20:06:30.420507+00:00 heroku[web.1]: State changed from starting to crashed
+2015-07-18T20:06:30.421810+00:00 heroku[web.1]: State changed from crashed to starting
+jason@thinkpad:anagram$ git status
+# On branch master
+nothing to commit (working directory clean)
+jason@thinkpad:anagram$ 
