@@ -9,7 +9,7 @@ development:
   host: localhost
   username: jason
   password: D1ckn0s3
-    
+
 test:
   adapter: postgresql
   database: anagram_test
