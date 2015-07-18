@@ -1,8 +1,6 @@
-#\ -s puma
 require 'sinatra/base'
 require 'sinatra'
 require 'rake'
-require 'puma'
 
 require ::File.expand_path('../app',  __FILE__)
 
