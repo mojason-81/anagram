@@ -19,3 +19,24 @@ on_worker_boot do
   # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
   ActiveRecord::Base.establish_connection
 end
+
+previous database.yml:
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
+
+development:
+  adapter: postgresql
+  database: angram_development
+  pool: 5
+  host: localhost
+  username: jason
+  password: D1ckn0s3
+
+test:
+  adapter: postgresql
+  database: anagram_test
+  pool: 5
+  host: localhost
+  username: jason
+  password: D1ckn0s3

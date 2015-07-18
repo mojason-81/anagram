@@ -1,4 +1,3 @@
-#config/database.yml
 production:
   url: <%= ENV['DATABASE_URL'] %>
 
@@ -7,13 +6,13 @@ development:
   database: angram_development
   pool: 5
   host: localhost
-  username: jason
-  password: D1ckn0s3
+  username: postgres
+  password: root
 
 test:
   adapter: postgresql
   database: anagram_test
   pool: 5
   host: localhost
-  username: jason
-  password: D1ckn0s3
+  username: postgres
+  password: root
