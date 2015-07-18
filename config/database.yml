@@ -1,6 +1,6 @@
 #config/database.yml
 production:
-  url: <%= ENV['postgres://mjnfeymrvpcaqz:Z3UlI4xBAo2LJzDv8mlYImcmDy@ec2-54-235-145-226.compute-1.amazonaws.com:5432/d6cequgr2tao7h'] %>
+  url: 'postgres://mjnfeymrvpcaqz:Z3UlI4xBAo2LJzDv8mlYImcmDy@ec2-54-235-145-226.compute-1.amazonaws.com:5432/d6cequgr2tao7h
 
 development:
   adapter: postgresql
