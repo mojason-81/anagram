@@ -6,13 +6,13 @@ development:
   database: angram_development
   pool: 5
   host: localhost
-  username: postgres
-  password: root
+  username: jason
+  password: D1ckn0s3
 
 test:
   adapter: postgresql
   database: anagram_test
   pool: 5
   host: localhost
-  username: postgres
-  password: root
+  username: jason
+  password: D1ckn0s3
