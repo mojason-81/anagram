@@ -1,0 +1,10 @@
+Starting process with command `bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+2015-07-18T18:35:26.468531+00:00 app[web.1]: Puma starting in single mode...
+2015-07-18T18:35:26.468573+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2015-07-18T18:35:26.468569+00:00 app[web.1]: * Version 2.12.2 (ruby 2.2.0-p0), codename: Plutonian Photo Shoot
+2015-07-18T18:35:26.468575+00:00 app[web.1]: * Environment: production
+2015-07-18T18:35:28.067797+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `instance_eval'
+2015-07-18T18:35:28.067788+00:00 app[web.1]: config.ru:7:in `block in <module:PumaRackCompat>': undefined method `set' for #<Puma::Rack::Builder:0x007fb700660f30> (NoMethodError)
+2015-07-18T18:35:28.067800+00:00 app[web.1]: 	from config.ru:in `new'
+2015-07-18T18:35:28.067799+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `initialize'
+2015-07-18T18:35:28.067736+00:00 app[web.1]: ! Unable to load application: NoMethodError: undefined method `set' for #<Puma::Rack::Builder:0x007fb700660f30>

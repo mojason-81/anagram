@@ -1,0 +1,108 @@
+terminal output:
+
+jason@thinkpad:anagram$ [2904:2904:0717/225701:ERROR:nss_util.cc(819)] After loading Root Certs, loaded==false: NSS error code: -8018
+Created new window in existing browser session.
+
+heroku logs:
+
+2015-07-18T03:50:11.383801+00:00 app[web.1]: 	from config.ru:in `<module:PumaRackCompat>'
+2015-07-18T03:50:11.383830+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `eval'
+2015-07-18T03:50:11.383850+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `new_from_string'
+2015-07-18T03:50:11.383906+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:71:in `app'
+2015-07-18T03:50:11.383887+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:104:in `load_rackup'
+2015-07-18T03:50:11.383869+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:174:in `parse_file'
+2015-07-18T03:50:11.383925+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/runner.rb:113:in `load_and_bind'
+2015-07-18T03:50:11.383964+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/cli.rb:215:in `run'
+2015-07-18T03:50:11.383944+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/single.rb:79:in `run'
+2015-07-18T03:50:11.383983+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/bin/puma:10:in `<top (required)>'
+2015-07-18T03:50:11.384002+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `load'
+2015-07-18T03:50:11.384022+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `<main>'
+2015-07-18T03:50:12.417828+00:00 heroku[web.1]: State changed from starting to crashed
+2015-07-18T03:50:12.399062+00:00 heroku[web.1]: Process exited with status 1
+2015-07-18T03:50:12.731123+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=jrf-anagram.herokuapp.com request_id=8388edab-747a-49a1-b541-67d912cc88c1 fwd="73.217.197.61" dyno= connect= service= status=503 bytes=
+2015-07-18T03:50:13.528722+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=jrf-anagram.herokuapp.com request_id=59ba4fde-5ea2-4012-874f-ec95988ed3b2 fwd="73.217.197.61" dyno= connect= service= status=503 bytes=
+2015-07-18T03:54:48.681720+00:00 heroku[api]: Deploy 22cfe36 by jason@mojason.com
+2015-07-18T03:54:48.681720+00:00 heroku[api]: Release v10 created by jason@mojason.com
+2015-07-18T03:54:48.726363+00:00 heroku[slug-compiler]: Slug compilation started
+2015-07-18T03:54:48.726389+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-07-18T03:54:49.346510+00:00 heroku[web.1]: State changed from crashed to starting
+2015-07-18T03:54:53.189796+00:00 heroku[web.1]: Starting process with command `bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+2015-07-18T03:54:55.215922+00:00 app[web.1]: Puma starting in single mode...
+2015-07-18T03:54:55.215949+00:00 app[web.1]: * Version 2.12.2 (ruby 2.2.1-p85), codename: Plutonian Photo Shoot
+2015-07-18T03:54:55.215951+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2015-07-18T03:54:55.215953+00:00 app[web.1]: * Environment: production
+2015-07-18T03:54:55.783393+00:00 app[web.1]: ! Unable to load application: NoMethodError: undefined method `set' for #<Puma::Rack::Builder:0x007fcfe0ed0820>
+2015-07-18T03:54:55.783464+00:00 app[web.1]: config.ru:7:in `block in <module:PumaRackCompat>': undefined method `set' for #<Puma::Rack::Builder:0x007fcfe0ed0820> (NoMethodError)
+2015-07-18T03:54:55.783469+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `instance_eval'
+2015-07-18T03:54:55.783473+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `initialize'
+2015-07-18T03:54:55.783476+00:00 app[web.1]: 	from config.ru:in `new'
+2015-07-18T03:54:55.783478+00:00 app[web.1]: 	from config.ru:in `<module:PumaRackCompat>'
+2015-07-18T03:54:55.783486+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `new_from_string'
+2015-07-18T03:54:55.783482+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `eval'
+2015-07-18T03:54:55.783487+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:174:in `parse_file'
+2015-07-18T03:54:55.783491+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:104:in `load_rackup'
+2015-07-18T03:54:55.783494+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:71:in `app'
+2015-07-18T03:54:55.783496+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/runner.rb:113:in `load_and_bind'
+2015-07-18T03:54:55.783505+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/bin/puma:10:in `<top (required)>'
+2015-07-18T03:54:55.783509+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `load'
+2015-07-18T03:54:55.783499+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/single.rb:79:in `run'
+2015-07-18T03:54:55.783503+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/cli.rb:215:in `run'
+2015-07-18T03:54:55.783512+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `<main>'
+2015-07-18T03:54:56.624748+00:00 heroku[web.1]: State changed from starting to crashed
+2015-07-18T03:54:56.625885+00:00 heroku[web.1]: State changed from crashed to starting
+2015-07-18T03:54:56.609240+00:00 heroku[web.1]: Process exited with status 1
+2015-07-18T03:54:59.800574+00:00 heroku[web.1]: Starting process with command `bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+2015-07-18T03:55:01.427201+00:00 app[web.1]: Puma starting in single mode...
+2015-07-18T03:55:01.427234+00:00 app[web.1]: * Version 2.12.2 (ruby 2.2.1-p85), codename: Plutonian Photo Shoot
+2015-07-18T03:55:01.427238+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2015-07-18T03:55:01.427240+00:00 app[web.1]: * Environment: production
+2015-07-18T03:55:02.007811+00:00 app[web.1]: ! Unable to load application: NoMethodError: undefined method `set' for #<Puma::Rack::Builder:0x007f7b4011c728>
+2015-07-18T03:55:02.007848+00:00 app[web.1]: config.ru:7:in `block in <module:PumaRackCompat>': undefined method `set' for #<Puma::Rack::Builder:0x007f7b4011c728> (NoMethodError)
+2015-07-18T03:55:02.007853+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `instance_eval'
+2015-07-18T03:55:02.007861+00:00 app[web.1]: 	from config.ru:in `new'
+2015-07-18T03:55:02.007857+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `initialize'
+2015-07-18T03:55:02.007865+00:00 app[web.1]: 	from config.ru:in `<module:PumaRackCompat>'
+2015-07-18T03:55:02.007866+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `eval'
+2015-07-18T03:55:02.007870+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `new_from_string'
+2015-07-18T03:55:02.007872+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:174:in `parse_file'
+2015-07-18T03:55:02.007875+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:104:in `load_rackup'
+2015-07-18T03:55:02.007883+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/runner.rb:113:in `load_and_bind'
+2015-07-18T03:55:02.007880+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:71:in `app'
+2015-07-18T03:55:02.007884+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/single.rb:79:in `run'
+2015-07-18T03:55:02.007888+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/cli.rb:215:in `run'
+2015-07-18T03:55:02.007892+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/bin/puma:10:in `<top (required)>'
+2015-07-18T03:55:02.007895+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `load'
+2015-07-18T03:55:02.007897+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `<main>'
+2015-07-18T03:55:02.833410+00:00 heroku[web.1]: Process exited with status 1
+2015-07-18T03:55:02.847733+00:00 heroku[web.1]: State changed from starting to crashed
+2015-07-18T03:56:42.899624+00:00 heroku[api]: Deploy 9351f71 by jason@mojason.com
+2015-07-18T03:56:42.899624+00:00 heroku[api]: Release v11 created by jason@mojason.com
+2015-07-18T03:56:42.941837+00:00 heroku[slug-compiler]: Slug compilation started
+2015-07-18T03:56:42.941857+00:00 heroku[slug-compiler]: Slug compilation finished
+2015-07-18T03:56:43.635176+00:00 heroku[web.1]: State changed from crashed to starting
+2015-07-18T03:56:46.819773+00:00 heroku[web.1]: Starting process with command `bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+2015-07-18T03:56:48.561246+00:00 app[web.1]: Puma starting in single mode...
+2015-07-18T03:56:48.561277+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2015-07-18T03:56:48.561275+00:00 app[web.1]: * Version 2.12.2 (ruby 2.2.0-p0), codename: Plutonian Photo Shoot
+2015-07-18T03:56:48.561279+00:00 app[web.1]: * Environment: production
+2015-07-18T03:56:49.216874+00:00 app[web.1]: ! Unable to load application: NoMethodError: undefined method `set' for #<Puma::Rack::Builder:0x007f4789736ef0>
+2015-07-18T03:56:49.216914+00:00 app[web.1]: config.ru:7:in `block in <module:PumaRackCompat>': undefined method `set' for #<Puma::Rack::Builder:0x007f4789736ef0> (NoMethodError)
+2015-07-18T03:56:49.216919+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `instance_eval'
+2015-07-18T03:56:49.216922+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:189:in `initialize'
+2015-07-18T03:56:49.216926+00:00 app[web.1]: 	from config.ru:in `new'
+2015-07-18T03:56:49.216930+00:00 app[web.1]: 	from config.ru:in `<module:PumaRackCompat>'
+2015-07-18T03:56:49.216934+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `eval'
+2015-07-18T03:56:49.216935+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:183:in `new_from_string'
+2015-07-18T03:56:49.216939+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/rack/builder.rb:174:in `parse_file'
+2015-07-18T03:56:49.216944+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:71:in `app'
+2015-07-18T03:56:49.216943+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/configuration.rb:104:in `load_rackup'
+2015-07-18T03:56:49.216948+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/runner.rb:113:in `load_and_bind'
+2015-07-18T03:56:49.216955+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/cli.rb:215:in `run'
+2015-07-18T03:56:49.216951+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/lib/puma/single.rb:79:in `run'
+2015-07-18T03:56:49.216966+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `<main>'
+2015-07-18T03:56:49.216963+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/bin/puma:23:in `load'
+2015-07-18T03:56:49.216959+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/2.2.0/gems/puma-2.12.2/bin/puma:10:in `<top (required)>'
+2015-07-18T03:56:49.997637+00:00 heroku[web.1]: Process exited with status 1
+2015-07-18T03:56:50.016397+00:00 heroku[web.1]: State changed from starting to crashed
+2015-07-18T03:57:02.135417+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=jrf-anagram.herokuapp.com request_id=ae92c894-49ec-4fd5-a13a-e398d3cd0d89 fwd="73.217.197.61" dyno= connect= service= status=503 bytes=
+2015-07-18T03:57:02.859474+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=jrf-anagram.herokuapp.com request_id=25f9b2d1-e509-4da5-a264-e60275ec488c fwd="73.217.197.61" dyno= connect= service= status=503 bytes=
