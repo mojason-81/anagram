@@ -1,3 +1,4 @@
+#\ -s puma
 require 'sinatra/base'
 require 'sinatra'
 require 'rake'
