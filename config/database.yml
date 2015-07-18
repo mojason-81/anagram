@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  database: angram_development
+  pool: 5
+  host: localhost
+  username: jason
+  password: D1ckn0s3
+    
+test:
+  adapter: postgresql
+  database: anagram_test
+  pool: 5
+  host: localhost
+  username: jason
+  password: D1ckn0s3

@@ -1,0 +1,9 @@
+<h1>Anagrams for <%= "#{@word}" %></h1>
+<ul class="list-unstyled">
+	<% if !@anagrams.nil? %>
+    <% @anagrams.each do |anagram| %>
+    	<li><%= "#{anagram.text}" %></li>
+    <% end %>
+  <% end %>
+</ul>
+<p><a href="/">Go back and try another!</a></p>

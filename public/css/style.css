@@ -1,0 +1,13 @@
+li {
+	font-size: 1.5em;
+}
+p span {
+	font-style: italic;
+}
+
+.images {
+	background-size: 100% 100%;
+	margin-top: 1em;
+	background-image: url(/../images/anagram_01.jpg);
+  height: 600px;
+}
