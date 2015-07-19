@@ -48,8 +48,3 @@ post '/' do
 		erb :index
 	end
 end
-
-get '/words' do
-	@words = Word.all
-	erb :"/words/index"
-end
