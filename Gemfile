@@ -10,7 +10,7 @@ gem 'rake'
 gem 'rack'
 gem 'rack-test'
 gem 'activerecord'
-
-group :production do
-  gem 'puma'
-end
+gem 'puma'
+#group :production do
+#  gem 'puma'
+#end
