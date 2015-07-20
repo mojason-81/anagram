@@ -3,12 +3,14 @@
 	<thead class="well">
 		<th style="text-align:center">Text</th>
 		<th style="text-align:center">Letters</th>
+		<th style="text-align:center">Edit</th>
 	</thead>
 	<tbody>
 		<% @words.each do |word| %>
 			<tr>
-				<td><%= "#{word.text}" %></td>
+				<td><a href="<%= "/words/#{word.id}" %>"><%= "#{word.text}" %></a></td>
 				<td><%= "#{word.letters}" %></td>
+				<td><a href="<%= "/words/#{word.id}/edit" %>">Edit</a></td>
 			</tr>
 		<% end %>
 	</tbody>

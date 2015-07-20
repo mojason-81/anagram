@@ -1,6 +1,6 @@
-<h1><%= "#{@word}" %></h1>
-<h3>Letters</h3>
-<h4><%= '#{@word.letters}' %></h4>
+<h1><%= "#{@word.text}" %></h1>
+<h4>Letters in <%= "#{@word.text}" %> are <%= "#{@word.letters}" %></h4>
+<h2>Anagrams for <%= "#{@word.text}" %>:</h2>
 <ul class="list-unstyled">
 	<% if !@anagrams.nil? %>
     <% @anagrams.each do |anagram| %>

@@ -1,11 +1,10 @@
 class Word < ActiveRecord::Base
-	before_create :add_letters
+	before_save :add_letters
 
 	def add_letters
 		characters = self.text.chars
 		alphabetized_characters = characters.sort
 		self.letters = alphabetized_characters.join
-		#self.save
 	end
 
 	def self.find_anagrams(str)
@@ -15,13 +14,24 @@ class Word < ActiveRecord::Base
 		str.each_char do |c|
 			sorted_letters.push(c)
 		end
+		# ************************************
 		# Could have used:
-			#sorted_letters = str.chars
+		# sorted_letters = str.chars.sort.join
+		# ************************************
 		sorted_letters.sort!
 		sorted_word = sorted_letters.join
-
 		word_list = Word.where("letters=?", sorted_word)
-		return word_list
+		find_me = Word.where("text=?", str)
+		# ***********************************
+		# adding the word if it doesn't exits
+		# ***********************************
+		if word_list.exists? && find_me.exists?
+			return word_list
+		else
+			word = Word.create(text: str)
+			return find_anagrams(word.text)
+		end
+		#return word_list
 
 		#*****************************************
 		#  Old anagram generator for 3 letter words

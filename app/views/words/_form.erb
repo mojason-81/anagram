@@ -1,0 +1,9 @@
+<form action="<%= words_form_action(@word) %>" method="post" class="<%= words_form_class(@word) %>" id="<%= words_form_id(@word) %>">
+	<input type ="hidden" name="_method" value="<%= words_form_method(@word) %>" />
+	<!-- <label for="word">Add A Word</label> -->
+ 	<input type="text" name="text" value="<%= @word.text %>" />
+ 	<button type="submit" class="btn btn-info">Submit</button>
+ 	<% if @error.present? %>
+ 		<p class='error'><%= "#{@error}" %></p>
+ 	<% end %>
+</form>

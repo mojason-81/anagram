@@ -1,15 +1,19 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.0.0'
+
+gem 'activerecord'
+gem 'pg'
 
 gem 'rspec'
-gem 'pg'
-gem 'logger'
+gem 'faker'
+
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'rake'
 gem 'rack'
 gem 'rack-test'
-gem 'activerecord'
+gem 'will_paginate'
+gem 'nokogiri'
 
 group :production do
   gem 'puma'
