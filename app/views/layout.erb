@@ -2,23 +2,28 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Anagrams Generator</title>
 		<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="/css/style.css">
 	</head>
 	<body>
 		<div class="header text-center well">
-			<h1>Find Anagrams for Any Word</h1>
-			<h4>...so long as that word only has 3 letters.</h4>
+			<h1>Anagram Generator</h1>
 			<p>an-a-gram <br />
 				<span>noun</span> -- A word or phrase formed by reordering the letters of another word or phrase.
 		</div>
+
 		<div class="container text-center">
 			<%= yield %>
 		</div>
+
 		<div class="row">
 			<div class="images col-xs-12">
 			</div>
 		</div>
 	</body>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/ie10-viewport-bug-workaround.js"></script>
 </html>
