@@ -6,7 +6,7 @@
 		<th style="text-align:center">Edit</th>
 		<th style="text-align:center">Delete</th>
 	</thead>
-	<tbody>
+	<tbody class="well">
 		<% @words.each do |word| %>
 			<tr>
 				<td><a href="<%= "/words/#{word.id}" %>"><%= "#{word.text}" %></a></td>

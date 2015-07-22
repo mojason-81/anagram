@@ -2,7 +2,7 @@
 	<input type ="hidden" name="_method" value="<%= words_form_method(@word) %>" />
 	<!-- <label for="word">Add A Word</label> -->
  	<input type="text" name="text" value="<%= @word.text %>" />
- 	<button type="submit" class="btn btn-info">Submit</button>
+ 	<button type="submit" class="btn btn-success">Submit</button>
  	<% if @error.present? %>
  		<p class='error'><%= "#{@error}" %></p>
  	<% end %>
