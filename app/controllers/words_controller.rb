@@ -1,6 +1,6 @@
 def valid_addition?(input)
-	@find_me = Word.find_by text: input
-	if @find_me == nil
+	@test = Word.find_by text: input
+	if input.class == @test.class
 		raise Exception.new("Looks like that word is already in the list.")
 	end
 end
@@ -15,18 +15,21 @@ get '/words/new' do
 	erb :"/words/new"
 end
 
+# flargalnargahl
+# flufenhagenist
 post '/words' do
 	@word = params[:word]
-	begin
-		valid_addition?(@word)
+	@word = Word.find_by(text: params[:text])
+	if @word.is_a?(NilClass)
+		@word = params[:word]
 		@word = Word.create(text: params[:text])
-    redirect "/words/#{@word.id}"
-	rescue Exception => error
-		@error = error.message
-		erb :index
+		redirect "/words/#{@word.id}"
+	else
+		@error = "Oops! That's already in our list."
+		@word = Word.new
+		erb :"/words/new"
 	end
 end
-
 
 	#if File.read("public/assets/word_list.txt").include?(params [:text]) == true
    # @word = Word.create(text: params[:text])

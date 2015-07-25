@@ -51,26 +51,17 @@ test:
   end
 end
 
+
+
 post '/words' do
 	@word = params[:word]
-	begin
-		valid_addition?(@word)
+	@test = Word.find_by text: @word
+	if @word != @test
 		@word = Word.create(text: params[:text])
-    redirect "/words/#{@word.id}"
-	rescue Exception => error
-		@error = error.message
-		@word = Word.new
+		redirect "/words/#{@word.id}"
+	else
+		@error = "Fuck you"
 		erb :"/words/new"
 	end
 end
-
-@test = Word.where(text: @word)
-	if @word.exists?
-		@error = "Oops! #{@word} #{@test}  That word is already in our list."
-		@word = Word.new
-		erb :"/words/new"
-	else
-		@word = Word.create(text: params[:text])
-		@error = "SHit! #{@word} #{@test}  That word is already in our list."
-		redirect "/words/#{@word.id}"
 
