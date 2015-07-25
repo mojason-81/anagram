@@ -22,16 +22,15 @@ class Word < ActiveRecord::Base
 		sorted_word = sorted_letters.join
 		word_list = Word.where("letters=?", sorted_word)
 		find_me = Word.where("text=?", str)
-		# ***********************************
-		# adding the word if it doesn't exits
-		# ***********************************
-		if word_list.exists? && find_me.exists?
-			return word_list
-		else
-			word = Word.create(text: str)
-			return find_anagrams(word.text)
-		end
-		#return word_list
+		return word_list
+	end
+end
+
+
+
+#class Post
+#	self.per_page = 50
+#end
 
 		#*****************************************
 		#  Old anagram generator for 3 letter words
@@ -57,5 +56,3 @@ class Word < ActiveRecord::Base
 		#	end
 		#end
 		#return anagrams
-	end
-end

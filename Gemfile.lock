@@ -19,10 +19,18 @@ GEM
     diff-lcs (1.2.5)
     faker (1.4.3)
       i18n (~> 0.5)
+    google_spellcheck (1.0.1)
+      httparty
+      json
+      nokogiri
+    httparty (0.13.5)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (1.8.3)
     mini_portile (0.6.2)
     minitest (5.7.0)
+    multi_xml (0.5.5)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.2)
@@ -66,6 +74,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   faker
+  google_spellcheck
   nokogiri
   pg
   puma

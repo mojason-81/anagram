@@ -40,3 +40,13 @@ test:
   host: localhost
   username: jason
   password: D1ckn0s3
+
+  post '/words/new' do
+  if File.read("public/assets/word_list.txt").include?(params [:word]) == true
+    @word = Word.create(text: params[:text])
+    redirect "/words/#{@word.id}"
+  else
+    @error = "Sorry that's not a word."
+    erb :"/words/new"
+  end
+end

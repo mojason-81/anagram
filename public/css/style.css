@@ -7,6 +7,14 @@ body {
   background-size: cover;
 }
 
+.border-top {
+	border-top: 0.08em solid #C6190E;
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 0.75em;
+}
+
 label, .form-holder {
 	color: #219CB5;
 	font-size: 1.25em;
@@ -19,6 +27,12 @@ label, .form-holder {
 	font-size: 1.5em;
 	color: #FFFFFF;
 	text-shadow: 0.25em 0.5em 0em #23459E;
+}
+
+.header-lg {
+	width: 50%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 p span {

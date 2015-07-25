@@ -1,24 +1,29 @@
 <h1>Words</h1>
-<table class="table table-striped">
-	<thead class="well">
-		<th style="text-align:center">Text</th>
-		<th style="text-align:center">Letters</th>
-		<th style="text-align:center">Edit</th>
-		<th style="text-align:center">Delete</th>
-	</thead>
-	<tbody class="well">
-		<% @words.each do |word| %>
-			<tr>
-				<td><a href="<%= "/words/#{word.id}" %>"><%= "#{word.text}" %></a></td>
-				<td><%= "#{word.letters}" %></td>
-				<td><a href="<%= "/words/#{word.id}/edit" %>">Edit</a></td>
-				<td>
-          <form action="<%= "/words/#{word.id}" %>" method="post">
-            <input type="hidden" name="_method" value="delete" />
-            <button class="btn btn-danger" type="submit">Delete</button>
-          </form>
-        </td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
+<div class="table-responsive">
+	<table class="table table-striped">
+		<thead class="well">
+			<th style="text-align:center">Text</th>
+			<th style="text-align:center">Letters</th>
+			<th style="text-align:center">Edit</th>
+			<th style="text-align:center">Delete</th>
+		</thead>
+		<tbody class="well">
+			<% @words.each do |word| %>
+				<tr>
+					<td><a href="<%= "/words/#{word.id}" %>"><%= "#{word.text}" %></a></td>
+					<td><%= "#{word.letters}" %></td>
+					<td><a href="<%= "/words/#{word.id}/edit" %>">Edit</a></td>
+					<td>
+	          <form action="<%= "/words/#{word.id}" %>" method="post">
+	            <input type="hidden" name="_method" value="delete" />
+	            <button class="btn btn-danger" type="submit">Delete</button>
+	          </form>
+	        </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<div class="text-center">
+	<%= will_paginate @words, :container => false %>
+</div>

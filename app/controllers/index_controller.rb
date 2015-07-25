@@ -1,27 +1,7 @@
-def three_letters?(input)
-	if input.length == 3
-		return true
-	else
-		return false
-	end
-end
-
-def distinct_letters?(input)
-	letter_array = input.chars
-	unique_letters = letter_array.uniq
-	if unique_letters.length < letter_array.length
-		return false
-	else
-		return true
-	end
-end
-
 def valid_input?(input)
-	if input.length > 3
-		raise Exception.new("Word must be less than or equal to 3
-			characters.")
-	elsif !distinct_letters?(input)
-		raise Exception.new("Word must contain only unique letters")
+	@find_me = Word.find_by text: input
+	if @find_me == nil
+		raise Exception.new("Sorry, looks like that word isn't in our list.")
 	end
 end
 
@@ -40,12 +20,11 @@ end
 
 post '/' do
 	@word = params[:word]
-	#begin
-	#	valid_input?(@word)
-	#	redirect "/anagrams/#{@word}"
-	#rescue Exception => error
-	#	@error = error.message
-	#	erb :index
-	#end
-	redirect "/anagrams/#{@word}"
+	begin
+		valid_input?(@word)
+		redirect "/anagrams/#{@word}"
+	rescue Exception => error
+		@error = error.message
+		erb :index
+	end
 end

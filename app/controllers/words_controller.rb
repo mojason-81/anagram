@@ -1,6 +1,13 @@
+def valid_addition?(input)
+	@find_me = Word.find_by text: input
+	if @find_me == nil
+		raise Exception.new("Looks like that word is already in the list.")
+	end
+end
+
 get '/words' do
-	@words = Word.all
-	erb :"/words/index"
+  @words = Word.paginate(page: params[:page]).order(:text)
+  erb :"/words/index"
 end
 
 get '/words/new' do
@@ -8,10 +15,27 @@ get '/words/new' do
 	erb :"/words/new"
 end
 
-post '/words/new' do
-	@word = Word.create(text: params[:text])
-	redirect "/words/#{@word.id}"
+post '/words' do
+	@word = params[:word]
+	begin
+		valid_addition?(@word)
+		@word = Word.create(text: params[:text])
+    redirect "/words/#{@word.id}"
+	rescue Exception => error
+		@error = error.message
+		erb :index
+	end
 end
+
+
+	#if File.read("public/assets/word_list.txt").include?(params [:text]) == true
+   # @word = Word.create(text: params[:text])
+   # redirect "/words/#{@word.id}"
+  #else
+  #  @error = "Sorry that's not a word."
+  #  erb :"/words/new"
+  #end
+#end
 
 get '/words/:id' do
 	@word = Word.find(params[:id])

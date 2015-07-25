@@ -14,6 +14,7 @@ gem 'rack'
 gem 'rack-test'
 gem 'will_paginate'
 gem 'nokogiri'
+gem 'google_spellcheck'
 
 group :production do
   gem 'puma'
