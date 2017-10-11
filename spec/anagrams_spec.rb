@@ -34,7 +34,7 @@ describe 'Our Anagrams App' do
   end
 
   it 'valid_input throws an exception when input cannot be found in db' do
-    expect { valid_input?("hoobidiha") }.to raise_error
+    expect { valid_input?("hoobidiha") }.to raise_error(Exception)
   end
 
   it 'has letters of a word in alphabetical order' do
