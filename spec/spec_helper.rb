@@ -7,10 +7,9 @@ require 'rack/test'
 OUTER_APP = Rack::Builder.parse_file('config.ru').first
 
 module SpecHelper
-  include Rack::Test::Methods  
+  include Rack::Test::Methods
 
-  def app() 
+  def app()
     OUTER_APP
   end
-  
 end
