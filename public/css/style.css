@@ -1,6 +1,6 @@
 body {
-	background: #5EA6AD;
-	background: url(/../images/book_letters.jpg) no-repeat center center fixed; 
+    background: #5EA6AD;
+    background: url(/../images/book_letters.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -8,61 +8,60 @@ body {
 }
 
 .border-top {
-	border-top: 0.08em solid #C6190E;
-	width: 50%;
-	margin-right: auto;
-	margin-left: auto;
-	padding-top: 0.75em;
+    border-top: 0.08em solid #C6190E;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 0.75em;
 }
 
 label, .form-holder {
-	color: #219CB5;
-	font-size: 1.25em;
-	background-color: rgba(0, 0, 0, 0.8);
-	padding: 0.25em;
-	border-radius: 90px;
+    color: #219CB5;
+    font-size: 1.25em;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0.25em;
+    border-radius: 90px;
 }
 
 .nav li {
-	font-size: 1.5em;
-	color: #FFFFFF;
-	text-shadow: 0.25em 0.5em 0em #23459E;
+    font-size: 1.5em;
+    color: #FFFFFF;
 }
 
 .header-lg {
-	width: 50%;
-	margin-right: auto;
-	margin-left: auto;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 p span {
-	font-style: italic;
+    font-style: italic;
 }
 
 .btn {
-	border: #458716 solid 0.25em;
-	border-radius: 90px;
+    border: #458716 solid 0.25em;
+    border-radius: 90px;
 }
 
 input {
-	border: black solid 0.2em;
-	color: black;
-	padding-left: 0.5em;
+    border: black solid 0.2em;
+    color: black;
+    padding-left: 0.5em;
 }
 
 tbody a {
-	color: green;
-	font-size: 1em;
-	background-color: rgba(0, 0, 0, 0);
+    color: green;
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 td, tr, th, table, tbody {
-	background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .images {
-	background-size: 100% 100%;
-	margin-top: 1em;
-	/*background-image: url(/../images/book_letters.jpg);*/
+    background-size: 100% 100%;
+    margin-top: 1em;
+    /*background-image: url(/../images/book_letters.jpg);*/
   height: 600px;
 }

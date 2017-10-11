@@ -1,20 +1,24 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.4.1'
 
 gem 'activerecord'
 gem 'pg'
 
-gem 'rspec'
 gem 'faker'
+gem 'rspec'
 
-gem 'sinatra'
-gem 'sinatra-activerecord'
-gem 'rake'
+gem 'google_spellcheck'
+gem 'nokogiri'
 gem 'rack'
 gem 'rack-test'
+gem 'rake'
+gem 'sinatra'
+gem 'sinatra-activerecord'
 gem 'will_paginate'
-gem 'nokogiri'
-gem 'google_spellcheck'
+
+group :test, :development do
+  gem 'pry'
+end
 
 group :production do
   gem 'puma'
