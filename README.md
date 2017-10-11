@@ -1,7 +1,7 @@
 # Anagram app using Ruby and Sinatra
 
 Built while taking online course from Skillcrush.  Recently updated to Ruby 2.4.1.  Recently updated gems.  Recently
-tested with PostgreSQL 9.6 on Mac.  Was originally built on Ubuntu 12.04.
+tested with PostgreSQL 9.6 on macOS 10.12.6.  Was originally built on Ubuntu 12.04.
 
 If you'd like to run the app, you need a PostgreSQL DB.  Check the database.yml for configuration.  For the tests
 to pass, I had to run `bundle exec rake db:test:prepare`.  However, it's been a long time since I've had to monkey
